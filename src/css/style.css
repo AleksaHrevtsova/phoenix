@@ -1,0 +1,209 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+ul {
+  list-style: none;
+}
+a {
+  text-decoration: none;
+}
+
+body {
+  background-color: black;
+  color: wheat;
+}
+
+.container {
+  min-width: 320px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.header-wrapper {
+  position: fixed;
+  background: #fff;
+  z-index: 99;
+  width: 100%;
+  top: 15px;
+}
+.header-nav {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-between;
+  align-items: center;
+  /* margin: 0 20px; */
+  /* padding: 20px 0; */
+}
+.logo {
+  display: flex;
+  text-transform: capitalize;
+  color: black;
+  /* padding-left: 50px; */
+  font-family: "OpenSans";
+  font-size: 16px;
+  position: relative;
+}
+
+/* .logo::before {
+  content: "";
+  position: absolute;
+  width: 46px;
+  height: 46px;
+  background-color: rgb(198, 233, 158);
+  background-image: url(../images/icons/logo-icon32.png);
+  background-repeat: no-repeat;
+  background-position: center;
+  border-radius: 50%;
+  top: -50%;
+  left: 0px;
+} */
+
+.logo span {
+  text-transform: uppercase;
+  font-family: "OpenSans Bold";
+}
+
+.menu-item a:hover,
+.menu-item a:focus {
+  color: rgb(27, 18, 48);
+  font-size: large;
+}
+
+.menu-item:last-child {
+  position: relative;
+  padding-right: 25px;
+}
+
+/* .menu-item:last-child::before {
+  content: "";
+  position: absolute;
+  width: 22px;
+  height: 22px;
+  background-image: url(../images/fb_oval-icon16.png);
+  background-repeat: no-repeat;
+  background-position: center;
+  right: 0%;
+  top: 47%;
+} */
+
+.menu-item a {
+  color: black;
+  font-family: "OpenSans Bold";
+  font-size: 14px;
+  line-height: 14px;
+}
+
+.header {
+  /* box-shadow: 1px 1px 4px 0 rgba(0, 0, 0, .1); */
+  z-index: 3;
+}
+
+.header ul {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: inherit;
+  overflow: hidden;
+}
+
+.header li {
+  padding-top: 20px;
+  padding-left: 3px;
+  /* padding-right: auto; */
+}
+
+.header li a {
+  display: block;
+  padding: 2px 5px;
+  border: 1px solid #201f1f;
+  color: #535353;
+  text-transform: uppercase;
+  font-size: 14px;
+  line-height: 14px;
+  font-family: "OpenSans";
+}
+
+.header li a:hover,
+.header .menu-btn:hover {
+  background-color: #8f5050;
+  font-weight: bold;
+}
+
+/* menu */
+/* задаем параметры для списка навигации при гамбургере */
+.header .menu {
+  clear: both;
+  max-height: 0;
+  transition: max-height 0.2s ease-out;
+}
+
+/* обертка гамбургера */
+.header .menu-icon {
+  display: flex;
+  border: 1px solid;
+  padding: 15px;
+  /* margin: 0 20px; */
+  position: relative;
+  user-select: none;
+  cursor: pointer;
+}
+
+.header .menu-icon .navicon {
+  display: block;
+  background: rgb(165, 30, 30);
+  width: 20px;
+  height: 2px;
+  position: relative;
+}
+
+.header .menu-icon .navicon::before,
+.header .menu-icon .navicon::after {
+  content: "";
+  position: absolute;
+  display: block;
+  width: 100%;
+  height: 100%;
+  background: black;
+}
+
+.header .menu-icon .navicon::before {
+  top: 5px;
+}
+
+.header .menu-icon .navicon::after {
+  top: -5px;
+}
+
+.header .menu-icon .navicon {
+  transition: background 0.2s ease-out;
+}
+
+.header .menu-btn:checked ~ .menu-icon .navicon {
+  background: transparent;
+}
+
+.header .menu-icon .navicon:before,
+.header .menu-icon .navicon:after {
+  transition: all 0.2s ease-out;
+}
+
+.header .menu-btn:checked ~ .menu {
+  max-height: 100%;
+}
+
+.header .menu-btn:checked ~ .menu-icon .navicon:before {
+  transform: rotate(-45deg);
+}
+
+.header .menu-btn:checked ~ .menu-icon .navicon:after {
+  transform: rotate(45deg);
+}
+
+.header .menu-btn:checked ~ .menu-icon:not(.steps) .navicon:before,
+.header .menu-btn:checked ~ .menu-icon:not(.steps) .navicon:after {
+  top: 0;
+}
+
+.header .menu-btn {
+  display: none;
+}
